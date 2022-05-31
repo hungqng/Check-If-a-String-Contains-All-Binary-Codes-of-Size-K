@@ -4,3 +4,8 @@
 
 class Solution:
     def hasAllCodes(self, s: str, k: int) -> bool:
+        dis_sub = 2**k
+        N = len(s)
+        tracker = set([s[i:i + k] for i in range(N + 1 - k)])
+        
+        return dis_sub == len(tracker)
